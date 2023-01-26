@@ -1,0 +1,33 @@
+django-admin startproject <nameoftheproject>
+*** Create Routes ****
+python manage.py startapp <nameofapp>
+***
+make a file in myapp: urls.py
+#2
+after creating the path in urls.py, create the views in views.py
+3#*** To run the server in***
+python manage.py runserver
+#4
+go myproject urls.py add include to django.urls and in urlpatterns create a new path
+path('', include('myapp.urls'))
+#5
+create a template folder in root for all HTML files, and in settings.py in 'DIRS' line [BASE_DIR, 'templates']
+#6
+go to views.py to start the variable context:
+#7
+code the HTML
+#8
+create a new path in myapp urls.py, urlpatterns path('counter', views.counter, name='counter)
+#9
+create a counter function in myapp, views.py 
+#10
+create a new file in templates folder counter.html
+#11
+erase context in views.py
+#12
+create a new variable in the counter function in views.py, then write a new variable amount_of_words = len(text.split())
+add of words in the counter function: {'amount': amount_of_words }
+# 13
+in the counter.html and the key amount: The amount of words is {{amount}}
+# 14
+ for the POST method in index.html, use {% csrf_token %} so you dont get an error
