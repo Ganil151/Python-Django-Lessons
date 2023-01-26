@@ -67,3 +67,13 @@ in the counter.html and the key amount: The amount of words is {{amount}}
           </div>
 #### FIND AWAY TO MAKE THE ICONS ALSO DYNAMIC #####
 ***************************************************************************************
+# 19 
+Edit the models.py file for the database, then go to settings.py in myproject folder and add myapp(thenameoftheapp) in INSTALLED_APPS
+# 20 
+go to CMD(a new one) to start the database: python manage.py makemigrations, next step: python manage.py migrate***NOTE**
+any changes to model.py you have to repeat the migration steps for the database****
+#21
+go to the site 127.0.0.1:8000/admin,for the USER/PSW go back to the CMD: python manage.py createsuperuser, USER: admin PSW: ganil3773
+# 22 
+go to admin.py in myapp folder and import: from .models import Feature, then register the model: admin.site.register(Feature)
+when finished go to the site and create objects that was in the view.py file and also add in place features = Feature.objects.all()

@@ -151,17 +151,14 @@
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">{{feature.name}}</a></h4>
               <p class="description"> {{feature.details}} </p>
-              <!--###### Create an if statement for a the boolean in views.py -->
-              {% if feature.is_true == True %}
-              <p>This feature is True</p>
-              <!--- ### Create an else statement #### -->
-              {% else %}
-              <p>This feature is False</p>
+              <!-- Create a if statement -->
+
+              {% if feature.name == 'Quick' %}
+              <p>This feature says our site is very fucking fast </p>
               {% endif %}
+
             </div>
           </div>
-
-
           <!-- End the for loop  -->
           {% endfor %}
 
