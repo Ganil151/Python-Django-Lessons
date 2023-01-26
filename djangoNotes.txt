@@ -77,3 +77,9 @@ go to the site 127.0.0.1:8000/admin,for the USER/PSW go back to the CMD: python 
 # 22 
 go to admin.py in myapp folder and import: from .models import Feature, then register the model: admin.site.register(Feature)
 when finished go to the site and create objects that was in the view.py file and also add in place features = Feature.objects.all()
+# 23 
+go urls.py in myapp to add new path: path('register', views.register, name='register') then create a function called register in views.py, also create a file in templates folder register.html, after coding register.html file go back to the view.py and the exp: username = request.POST['username'] and all the other parameters
+#24 
+after creating the if statements in views.py import from django.contrib.auth.models import User, auth and from django.contrib import messages, after creating the if conditional error statements
+# 25 
+go back to the register.html and create a for conditional statement for the messages in views.py
