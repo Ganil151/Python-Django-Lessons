@@ -31,3 +31,11 @@ add of words in the counter function: {'amount': amount_of_words }
 in the counter.html and the key amount: The amount of words is {{amount}}
 # 14
  for the POST method in index.html, use {% csrf_token %} so you dont get an error
+ # 15
+ create a static folder for the CSS files, after go settings.py in myproject folder and import os, then go down to STATIC_URL
+ put this code in line underneath STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  
+ # 16
+ create style.css file in static folder, link the style.css in index.html file by: at the top of page {% load static %} first then  <link rel="stylesheet" href="{% static 'style.css' %}">
+ # 17
+ copy a free html template from https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/download/, and {% static 'on all the assets links' %}
+ **** Note find how to create form in django ****
