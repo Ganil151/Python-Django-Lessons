@@ -39,3 +39,31 @@ in the counter.html and the key amount: The amount of words is {{amount}}
  # 17
  copy a free html template from https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/download/, and {% static 'on all the assets links' %}
  **** Note find how to create form in django ****
+ # 18 Models
+ go to models.py in myapp, create a model, then import the  from .models import Feature in views.py, then under the index(request) put the details
+***********************************************************************
+<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">{{feature2.name}}</a></h4>
+              <p class="description">{{feature2.details}}</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">{{feature3.name}}</a></h4>
+              <p class="description">{{feature3.details}}</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">{{feature4.name}}</a></h4>
+              <p class="description">{{feature4.details}}</p>
+            </div>
+          </div>
+#### FIND AWAY TO MAKE THE ICONS ALSO DYNAMIC #####
+***************************************************************************************
