@@ -83,3 +83,5 @@ go urls.py in myapp to add new path: path('register', views.register, name='regi
 after creating the if statements in views.py import from django.contrib.auth.models import User, auth and from django.contrib import messages, after creating the if conditional error statements
 # 25 
 go back to the register.html and create a for conditional statement for the messages in views.py
+# 26
+create a new path in urls.py in the myapp folder, path(r'login', views.login, name='login') add the r to fix all issues, then create a login.html in the template folder, after coding the html return to views.py for the error conditions
