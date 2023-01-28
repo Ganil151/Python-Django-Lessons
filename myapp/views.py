@@ -23,7 +23,7 @@ def register(request):
     password = request.POST['password']
     password2 = request.POST['password2']
 
-        # Error Checking Conditions
+    # Error Checking Conditions
     if password == password2:
         username = request.POST['username']
         email = request.POST['email']
@@ -71,9 +71,11 @@ def logout(request):
 
 
 def counter(request):
-    text = request.GET['text']
-    amount_of_words = len(text.split())
-    return render(request, 'counter.html', {'amount/': amount_of_words})
+    posts = [1, 2, 3, 4, 5, 'tim', 'tom', 'john']
+    return render(request, 'counter.html', {'posts': posts})
 
+
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
 
 # Lesson Stopped at: , from: https://youtu.be/jBzwzrDvZ18?t=22129

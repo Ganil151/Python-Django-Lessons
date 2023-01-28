@@ -93,3 +93,16 @@ write the code like such
       <a href="login" class="btn-get-started scrollto">Login or Signup</a>
       {% endif %}
 then go to urls.py and create a new path: path(r'logout', views.login, name='login), after go views.py create the function and in index.html add logout
+# 28 DYNAMIC LINK:
+go to urls.py in urlpatterns and code: path('post/<str:pk>', views.post, name='post'), then go the views.py and write the function:
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk}) 
+#### Note make sure you use a str instead of int ####,
+after create file in templates post.html and test the code:  
+<h1>The value in the url is {{pk}} </h1> in post.html, 
+Go to counter.html: {% for post in posts %}
+<h1> <a href=" {% url 'post' post %} " />Post</h1>
+{% endfor %}
+the go to views.py and edit the counter function: def counter(request):
+    posts = [1, 2, 3, 4, 5, 'tim', 'tom', 'john']
+    return render(request, 'counter.html', {'posts': posts})
