@@ -1,3 +1,4 @@
+# pylint: disable=missing-function-docstring
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -17,29 +18,28 @@ def index(request):
 
 
 def register(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        password2 = request.POST['password2']
+    if request.method != 'POST':
+        return render(request, 'register.html')
+    password = request.POST['password']
+    password2 = request.POST['password2']
 
         # Error Checking Conditions
-        if password == password2:
-            if User.objects.filter(email=email).exists():
-                messages.info(request, 'Email Already Used')
-                return redirect('register')
-            elif User.objects.filter(username=username).exists():
-                messages.info(request, 'Username Already Used')
-                return redirect('register')
-            else:
-                user = User.objects.create_user(
-                    username=username, email=email, password=password)
-                user.save()
-                return redirect('login')
+    if password == password2:
+        username = request.POST['username']
+        email = request.POST['email']
+        if User.objects.filter(email=email).exists():
+            messages.info(request, 'Email Already Used')
+            return redirect('register')
+        elif User.objects.filter(username=username).exists():
+            messages.info(request, 'Username Already Used')
+            return redirect('register')
         else:
-            messages.info(request, 'Password Not The Same')
+            user = User.objects.create_user(
+                username=username, email=email, password=password)
+            user.save()
+            return redirect('login')
     else:
-        return render(request, 'register.html')
+        messages.info(request, 'Password Not The Same')
 
 # Login Views
 
@@ -59,6 +59,13 @@ def login(request):
         else:
             messages.info(request, 'Credentials Invalid')
     return render(request, 'login.html')
+
+# Logout Views
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 # Counter Views
 

@@ -1,5 +1,5 @@
 {
-    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.typeCheckingMode": "basic",
     "cSpell.words": [
         "accumsan",
         "accusamus",
@@ -126,6 +126,8 @@
         "Rutrum",
         "sagittis",
         "scelerisque",
+        "scrollto",
+        "Signup",
         "Sitema",
         "sollicitudin",
         "startapp",
@@ -169,5 +171,6 @@
     "python.analysis.completeFunctionParens": true,
     "vsintellicode.features.python.deepLearning": "enabled",
     "python.analysis.autoImportUserSymbols": true,
-    "python.analysis.diagnosticMode": "workspace"
+    "python.analysis.diagnosticMode": "workspace",
+    "pylint.importStrategy": "fromEnvironment"
 }

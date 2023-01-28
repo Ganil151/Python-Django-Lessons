@@ -85,3 +85,11 @@ after creating the if statements in views.py import from django.contrib.auth.mod
 go back to the register.html and create a for conditional statement for the messages in views.py
 # 26
 create a new path in urls.py in the myapp folder, path(r'login', views.login, name='login') add the r to fix all issues, then create a login.html in the template folder, after coding the html return to views.py for the error conditions
+# 27 ### Create a Logout Code:
+write the code like such 
+{% if user.is_authenticated %}
+      <a href="#about" class="btn-get-started scrollto">Logout</a>
+      {% else %}
+      <a href="login" class="btn-get-started scrollto">Login or Signup</a>
+      {% endif %}
+then go to urls.py and create a new path: path(r'logout', views.login, name='login), after go views.py create the function and in index.html add logout
